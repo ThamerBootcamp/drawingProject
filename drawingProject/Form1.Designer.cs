@@ -37,14 +37,16 @@ namespace drawingProject
             this.Rectangle = new System.Windows.Forms.Button();
             this.Dotted = new System.Windows.Forms.Button();
             this.pointer = new System.Windows.Forms.Button();
+            this.Solid = new System.Windows.Forms.Button();
             this.colorDialog1 = new System.Windows.Forms.ColorDialog();
             this.tableLayoutPanel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // tableLayoutPanel1
             // 
-            this.tableLayoutPanel1.ColumnCount = 1;
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tableLayoutPanel1.ColumnCount = 2;
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tableLayoutPanel1.Controls.Add(this.dashed, 0, 1);
             this.tableLayoutPanel1.Controls.Add(this.Color, 0, 2);
             this.tableLayoutPanel1.Controls.Add(this.Line, 0, 3);
@@ -52,25 +54,27 @@ namespace drawingProject
             this.tableLayoutPanel1.Controls.Add(this.Rectangle, 0, 5);
             this.tableLayoutPanel1.Controls.Add(this.Dotted, 0, 0);
             this.tableLayoutPanel1.Controls.Add(this.pointer, 0, 6);
+            this.tableLayoutPanel1.Controls.Add(this.Solid, 1, 0);
             this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Left;
             this.tableLayoutPanel1.Location = new System.Drawing.Point(0, 0);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
-            this.tableLayoutPanel1.RowCount = 7;
+            this.tableLayoutPanel1.RowCount = 8;
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 15.15152F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 15.15152F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 15.15152F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 15.15152F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 15.15152F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 15.15152F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 9.09091F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(202, 592);
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 15.15151F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 15.15151F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 15.15151F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 15.15151F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 15.15151F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 9.090909F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(202, 634);
             this.tableLayoutPanel1.TabIndex = 0;
             // 
             // dashed
             // 
-            this.dashed.Location = new System.Drawing.Point(3, 92);
+            this.dashed.Location = new System.Drawing.Point(3, 96);
             this.dashed.Name = "dashed";
-            this.dashed.Size = new System.Drawing.Size(132, 69);
+            this.dashed.Size = new System.Drawing.Size(95, 69);
             this.dashed.TabIndex = 1;
             this.dashed.Text = "dashed";
             this.dashed.UseVisualStyleBackColor = true;
@@ -78,9 +82,9 @@ namespace drawingProject
             // 
             // Color
             // 
-            this.Color.Location = new System.Drawing.Point(3, 181);
+            this.Color.Location = new System.Drawing.Point(3, 189);
             this.Color.Name = "Color";
-            this.Color.Size = new System.Drawing.Size(132, 69);
+            this.Color.Size = new System.Drawing.Size(95, 69);
             this.Color.TabIndex = 2;
             this.Color.Text = "Color";
             this.Color.UseVisualStyleBackColor = true;
@@ -88,9 +92,9 @@ namespace drawingProject
             // 
             // Line
             // 
-            this.Line.Location = new System.Drawing.Point(3, 270);
+            this.Line.Location = new System.Drawing.Point(3, 282);
             this.Line.Name = "Line";
-            this.Line.Size = new System.Drawing.Size(132, 69);
+            this.Line.Size = new System.Drawing.Size(95, 69);
             this.Line.TabIndex = 3;
             this.Line.Text = "Line";
             this.Line.UseVisualStyleBackColor = true;
@@ -98,9 +102,9 @@ namespace drawingProject
             // 
             // Circle
             // 
-            this.Circle.Location = new System.Drawing.Point(3, 359);
+            this.Circle.Location = new System.Drawing.Point(3, 375);
             this.Circle.Name = "Circle";
-            this.Circle.Size = new System.Drawing.Size(132, 69);
+            this.Circle.Size = new System.Drawing.Size(95, 69);
             this.Circle.TabIndex = 4;
             this.Circle.Text = "Circle";
             this.Circle.UseVisualStyleBackColor = true;
@@ -108,9 +112,9 @@ namespace drawingProject
             // 
             // Rectangle
             // 
-            this.Rectangle.Location = new System.Drawing.Point(3, 448);
+            this.Rectangle.Location = new System.Drawing.Point(3, 468);
             this.Rectangle.Name = "Rectangle";
-            this.Rectangle.Size = new System.Drawing.Size(132, 69);
+            this.Rectangle.Size = new System.Drawing.Size(95, 69);
             this.Rectangle.TabIndex = 5;
             this.Rectangle.Text = "Rectangle";
             this.Rectangle.UseVisualStyleBackColor = true;
@@ -120,7 +124,7 @@ namespace drawingProject
             // 
             this.Dotted.Location = new System.Drawing.Point(3, 3);
             this.Dotted.Name = "Dotted";
-            this.Dotted.Size = new System.Drawing.Size(132, 69);
+            this.Dotted.Size = new System.Drawing.Size(95, 69);
             this.Dotted.TabIndex = 0;
             this.Dotted.Text = "dotted";
             this.Dotted.UseVisualStyleBackColor = true;
@@ -128,19 +132,29 @@ namespace drawingProject
             // 
             // pointer
             // 
-            this.pointer.Location = new System.Drawing.Point(3, 537);
+            this.pointer.Location = new System.Drawing.Point(3, 561);
             this.pointer.Name = "pointer";
-            this.pointer.Size = new System.Drawing.Size(150, 46);
+            this.pointer.Size = new System.Drawing.Size(95, 46);
             this.pointer.TabIndex = 6;
             this.pointer.Text = "pointer";
             this.pointer.UseVisualStyleBackColor = true;
             this.pointer.Click += new System.EventHandler(this.pointer_Click);
             // 
+            // Solid
+            // 
+            this.Solid.Location = new System.Drawing.Point(104, 3);
+            this.Solid.Name = "Solid";
+            this.Solid.Size = new System.Drawing.Size(95, 69);
+            this.Solid.TabIndex = 7;
+            this.Solid.Text = "Solid";
+            this.Solid.UseVisualStyleBackColor = true;
+            this.Solid.Click += new System.EventHandler(this.Solid_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(13F, 32F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(831, 592);
+            this.ClientSize = new System.Drawing.Size(965, 634);
             this.Controls.Add(this.tableLayoutPanel1);
             this.DoubleBuffered = true;
             this.Name = "Form1";
@@ -167,6 +181,7 @@ namespace drawingProject
         private System.Windows.Forms.Button Dotted;
         private System.Windows.Forms.Button pointer;
         private System.Windows.Forms.ColorDialog colorDialog1;
+        private System.Windows.Forms.Button Solid;
     }
 }
 

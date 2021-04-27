@@ -48,7 +48,8 @@ namespace drawingProject
             {
                 Pen p = new Pen(Brushes.Gray, 2);
                 p.DashStyle = System.Drawing.Drawing2D.DashStyle.Dot;
-                g.DrawRectangle(p, start.X-10, start.Y-10, width + 20, height+20);
+                g.DrawRectangle(p, start.X - 10, start.Y - 10, width + 20, height + 20);
+
             }
         }
     }
@@ -59,45 +60,6 @@ namespace drawingProject
            int width = Math.Abs(this.end.X - this.start.X);
             int height = Math.Abs(this.end.Y - this.start.Y);
 
-           /* if (end.X > start.X)
-            {
-                if (end.Y > start.Y)
-                {
-
-                     g.DrawEllipse(this.pen,
-                                    this.start.X,
-                                    this.start.Y,
-                                    width,
-                                    height);
-                }
-                else
-                {
-                    g.DrawEllipse(this.pen,
-                                    this.start.X,
-                                    this.end.Y,
-                                    Math.Abs(this.end.X - this.start.X),
-                                    Math.Abs(this.end.Y - this.start.Y));
-                }
-            }
-            else
-            {
-                if (end.Y > start.Y)
-                {
-                    g.DrawEllipse(this.pen,
-                                   this.end.X,
-                                   this.start.Y,
-                                   width,
-                                   height);
-                }
-                else
-                {
-                    g.DrawEllipse(this.pen,
-                                    this.end.X,
-                                    this.end.Y,
-                                    Math.Abs(this.end.X - this.start.X),
-                                    Math.Abs(this.end.Y - this.start.Y));
-                }
-            }*/
             g.DrawEllipse(this.pen,
                this.start.X,
                this.start.Y,
@@ -188,30 +150,44 @@ namespace drawingProject
             if (!isPointerMode)
             {
                 currentShape.end = e.Location;
-           //     currentShape.width = Math.Abs(currentShape.end.X - currentShape.start.X);
-           //     currentShape.height = Math.Abs(currentShape.end.Y - currentShape.start.Y);
+               // if (!selectedShape.Equals("Line")||true)
+               // {
+                int w = Math.Abs(currentShape.end.X - currentShape.start.X);
+                int h = Math.Abs(currentShape.end.Y - currentShape.start.Y);
+                Point fStart;
+                Point fEnd;
 
-               /* if (currentShape.end.X> currentShape.start.X)
+                if(currentShape.end.X > currentShape.start.X)
                 {
                     if (currentShape.end.Y < currentShape.start.Y)
                     {
-                        int temp = currentShape.start.Y;
-                        currentShape.start.Y = currentShape.end.Y;
-                        currentShape.end.Y = temp + currentShape.height;
+                        fStart = new Point((currentShape.end.X- w),currentShape.end.Y);
+                        fEnd = new Point((currentShape.start.X + w), currentShape.start.Y);
+                    }
+                    else
+                    {
+                        fStart = currentShape.start;
+                        fEnd = currentShape.end;
                     }
                 }
                 else
                 {
-                    if (currentShape.end.Y > currentShape.start.Y)
+                    if(currentShape.end.Y > currentShape.start.Y)
                     {
-                        currentShape.start.X = currentShape.end.X;
+                        fStart = new Point((currentShape.start.X - w), currentShape.start.Y);
+                        fEnd = new Point((currentShape.end.X + w), currentShape.end.Y);
                     }
                     else
                     {
-                        currentShape.start.X = currentShape.end.X;
-                        currentShape.start.Y = currentShape.end.Y;
+                        fStart = currentShape.end;
+                        fEnd = currentShape.start;
                     }
-                }*/
+                }
+
+                currentShape.start = fStart;
+                currentShape.end = fEnd;
+                //}
+               
                 this.shapes.Add(currentShape);
                 this.Invalidate();
             }
@@ -280,7 +256,7 @@ namespace drawingProject
 
         private void Dotted_Click(object sender, EventArgs e)
         {
-            this.penStyle = System.Drawing.Drawing2D.DashStyle.Solid;
+            this.penStyle = System.Drawing.Drawing2D.DashStyle.Dot;
         }
 
         private void Color_Click(object sender, EventArgs e)
@@ -347,6 +323,11 @@ namespace drawingProject
             isPointerMode = false;
             selectedShape = "Line";
 
+        }
+
+        private void Solid_Click(object sender, EventArgs e)
+        {
+            this.penStyle = System.Drawing.Drawing2D.DashStyle.Solid;
         }
     }
 }
