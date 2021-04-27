@@ -37,6 +37,7 @@ namespace drawingProject
             this.Rectangle = new System.Windows.Forms.Button();
             this.Dotted = new System.Windows.Forms.Button();
             this.pointer = new System.Windows.Forms.Button();
+            this.colorDialog1 = new System.Windows.Forms.ColorDialog();
             this.tableLayoutPanel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -141,6 +142,7 @@ namespace drawingProject
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(831, 592);
             this.Controls.Add(this.tableLayoutPanel1);
+            this.DoubleBuffered = true;
             this.Name = "Form1";
             this.Text = "Form1";
             this.Load += new System.EventHandler(this.Form1_Load);
@@ -164,6 +166,7 @@ namespace drawingProject
         private System.Windows.Forms.Button Rectangle;
         private System.Windows.Forms.Button Dotted;
         private System.Windows.Forms.Button pointer;
+        private System.Windows.Forms.ColorDialog colorDialog1;
     }
 }
 
